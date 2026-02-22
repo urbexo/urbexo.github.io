@@ -1,52 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private Access</title>
+<title>Access Portal</title>
+
 <style>
-body{
-background:#0f0f0f;
-color:#fff;
-font-family:Arial, sans-serif;
-text-align:center;
-padding-top:120px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-h1{
-font-weight:600;
-letter-spacing:1px;
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a002e 0%, #000000 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
 }
-button{
-margin-top:30px;
-background:#ffffff;
-color:#000;
-border:none;
-padding:15px 40px;
-font-size:18px;
-border-radius:6px;
-cursor:pointer;
-transition:0.2s;
+
+/* Анимация "космоса" */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.08;
+    animation: moveStars 60s linear infinite;
 }
-button:hover{
-opacity:0.85;
+
+@keyframes moveStars {
+    from { transform: translate(0,0); }
+    to { transform: translate(-500px,-500px); }
 }
-small{
-display:block;
-margin-top:20px;
-opacity:0.5;
+
+.container {
+    text-align: center;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px #7a00ff;
+}
+
+.button {
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #7a00ff, #00e1ff);
+    color: white;
+    box-shadow: 0 0 25px #7a00ff;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #00e1ff;
 }
 </style>
+
 </head>
 <body>
 
-<h1>Secure Private Access</h1>
-<p>Connection required to continue</p>
+<div class="container">
+    <h1>PRIVATE ACCESS</h1>
+    <button class="button" onclick="goNext()">ENTER</button>
+</div>
 
-<a href="https://urbexo.github.io" target="_blank">
-<button>Enter</button>
-</a>
-
-<small>© 2026 Secure Portal</small>
+<script>
+function goNext() {
+    window.location.href = "https://example.com"; 
+}
+</script>
 
 </body>
 </html>
